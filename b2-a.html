@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+      const arr = [2, 3, 4, 4, 5, 23, 6];
+      function sum(arr) {
+        /*  let total = 0;
+          for (let i = 0; i < arr.length; i++) {
+            total += arr[i];
+          }
+          return total;*/
+          return arr.reduce((total, current) => total + current);
+      }
+
+      console.log("Tổng các phần tử trong mảng là " + sum(arr));
+  </script>
+</body>
+</html>
