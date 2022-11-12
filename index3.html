@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 10;
+    let b = 20;
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(a + b);
+        }, 3000);
+    }).then((item) => {
+        return item - 10;
+    }).then((item) => {
+        return item - 20;
+    }).then((item) => {
+        console.log(item)
+    });
+</script>
+</body>
+</html>

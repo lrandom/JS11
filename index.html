@@ -1,52 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Title</title>
 </head>
 <body>
 <script>
-    //outer function
-    //closures
-    function foo() {
-        let name = "Jane";
-
-        //inner function
-        function bar() {
-            return 'Hello ' + name;
-        }
-
-        return bar;
+    function demo() {
+        var a = 10;
+        var b = 10;
+        var sum;
+        setTimeout(() => {
+            sum = a + b;
+        }, 3000);
+        console.log("Sum " + sum);
     }
-
-    let fo = foo();
-    console.log(fo());
-
-
-    /*function foo(a){
-        return function bar(b){
-            return function barz(c){
-                console.log(a+b+c);
-            }
-        }
-    }
-    let a = foo(15);
-    let b = a(5);
-    b(5);*/
-
-    function foo() {
-        let num = 3;
-
-        function bar(num) {
-            console.log(num);
-        }
-        return bar;
-    }
-
-    (foo())(10);//3
+    demo();
 </script>
 </body>
 </html>
