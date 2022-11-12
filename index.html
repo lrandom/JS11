@@ -1,98 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-
-</body>
 <script>
-    //cách định nghĩa chuẩn
-    /*function printHello() {
-        console.log("Hello World");
+    //outer function
+    //closures
+    function foo() {
+        let name = "Jane";
+
+        //inner function
+        function bar() {
+            return 'Hello ' + name;
+        }
+
+        return bar;
     }
 
-    //cách định nghĩa sử dụng hàm như giá trị
-    //first citizen function
-    const printHello2 = function () {
-        console.log("Hello World");
-    };
-    printHello2();
+    let fo = foo();
+    console.log(fo());
 
-    const printHello3 = printHello2;
-    printHello3();
 
-    // sử dụng từ khoá new
-    const printHello4 = new Function("a","b","return a+b");
-    console.log(printHello4(10, 20));//30
+    /*function foo(a){
+        return function bar(b){
+            return function barz(c){
+                console.log(a+b+c);
+            }
+        }
+    }
+    let a = foo(15);
+    let b = a(5);
+    b(5);*/
 
-    function total(a, b) {
-        return a + b;
+    function foo() {
+        let num = 3;
+
+        function bar(num) {
+            console.log(num);
+        }
+        return bar;
     }
 
-    //hàm mũi tên ( ES6 EcmaScript2017)
-    const printHello5 =()=>{
-        console.log("Hello");
-    }
-
-    function totalThree(a=1, b=2, c=3) {
-        return a + b + c;
-    }
-
-    const result = totalThree(10, 20, 30);
-    console.log(result);//60
-
-
-    const result2 = totalThree();//6*/
-
-    //hàm gọi lại - callback function / lambda
-    //higher order function // hàm bậc cao
-    /*function a(b) {
-        console.log("A function");
-        b();//gọi hàm - invoke function - thực thi hàm đó
-
-    }
-
-    const c = function () {
-        console.log("B function");
-    };
-    a(c);*/
-    //A function
-    //B function
-
-    /*function a(numA,numB,b){
-        let total = numA + numB;
-        b(total);
-    }
-
-    a(10,20,function (total){
-        console.log(total++);
-        console.log(total);
-    });*/
-
-
-    function sum(a, b, c, d, e)
-    {
-        const total = a + b + c;
-        d(total);
-        e(total);
-    };
-
-    sum(5, 5, 5, function (total) {
-        console.log(total * 2);
-    }, function (total) {
-        console.log(total * 3);
-    });
-
-    sum(5, 4, 3, function (total) {
-        console.log(total / 2);
-        console.log(total / 3);
-    }, function (total) {
-        console.log(total / 2);
-        console.log(total / 4);
-    });
-
-
+    (foo())(10);//3
 </script>
+</body>
 </html>
